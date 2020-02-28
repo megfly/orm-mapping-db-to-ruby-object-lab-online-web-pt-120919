@@ -92,8 +92,7 @@ class Student
     def self.all_students_in_grade_X(grade)
     sql = <<-SQL
       SELECT * FROM students 
-      WHERE grade = 10 
-      LIMIT ?
+      WHERE grade = ?
     SQL
     
     DB[:conn].execute(sql, grade).map do |row|
